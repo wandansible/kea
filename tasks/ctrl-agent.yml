@@ -1,0 +1,21 @@
+---
+- name: Install kea control agent
+  ansible.builtin.apt:
+    name: "{{ kea_control_agent_package }}"
+    state: present
+
+- name: Configure kea control agent
+  ansible.builtin.template:
+    src: kea-ctrl-agent.conf
+    dest: /etc/kea/kea-ctrl-agent.conf
+    owner: root
+    group: _kea
+    mode: u=rw,g=r,o=
+  no_log: true
+  notify: restart isc-kea-ctrl-agent
+
+- name: Start and enable kea control agent
+  ansible.builtin.service:
+    name: isc-kea-ctrl-agent
+    state: started
+    enabled: yes

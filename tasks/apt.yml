@@ -1,0 +1,30 @@
+---
+- name: Create apt keyrings directory
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
+
+- name: Add kea-{{ kea_apt_repo_version }} apt signing key
+  ansible.builtin.apt_key:
+    id: "{{ kea_apt_key_fingerprint }}"
+    url: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.{{ kea_apt_key_fingerprint[-16:] }}.key
+    keyring: /etc/apt/keyrings/kea.gpg
+    state: present
+
+- name: Add kea-{{ kea_apt_repo_version }} apt repository
+  ansible.builtin.apt_repository:
+    repo: >-
+      deb [signed-by=/etc/apt/keyrings/kea.gpg]
+      https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_distribution | lower }}
+      {{ ansible_distribution_release }} main
+    filename: kea
+    update_cache: yes
+    state: present
+
+- name: Install extra kea packages
+  ansible.builtin.apt:
+    name: "{{ kea_packages }}"
+    state: present

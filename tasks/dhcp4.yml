@@ -1,0 +1,21 @@
+---
+- name: Install kea dhcp4
+  ansible.builtin.apt:
+    name: "{{ kea_dhcp4_package }}"
+    state: present
+
+- name: Configure kea dhcp4
+  ansible.builtin.template:
+    src: kea-dhcp4.conf
+    dest: /etc/kea/kea-dhcp4.conf
+    owner: root
+    group: _kea
+    mode: u=rw,g=r,o=
+  no_log: true
+  notify: restart isc-kea-dhcp4-server
+
+- name: Start and enable kea dhcp4
+  ansible.builtin.service:
+    name: isc-kea-dhcp4-server
+    state: started
+    enabled: yes

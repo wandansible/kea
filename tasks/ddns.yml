@@ -1,0 +1,21 @@
+---
+- name: Install kea ddns
+  ansible.builtin.apt:
+    name: "{{ kea_ddns_package }}"
+    state: present
+
+- name: Configure kea ddns
+  ansible.builtin.template:
+    src: kea-dhcp-ddns.conf
+    dest: /etc/kea/kea-dhcp-ddns.conf
+    owner: root
+    group: _kea
+    mode: u=rw,g=r,o=
+  no_log: true
+  notify: restart isc-kea-dhcp-ddns-server
+
+- name: Start and enable kea ddns
+  ansible.builtin.service:
+    name: isc-kea-dhcp-ddns-server
+    state: started
+    enabled: yes
