@@ -1,7 +1,7 @@
 ---
 argument_specs:
   main:
-    short_description: Install and configure Kea DHCP
+    short_description: Install and configure Kea DHCP server
     options:
       kea_apt_repo_version:
         description: |
