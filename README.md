@@ -144,7 +144,7 @@ Example Playbook
                      - name: domain-search
                        data: dhcp.example.org, example.org
                      - name: domain-name-servers
-                       data: 8.8.8.8 8.8.4.4
+                       data: 8.8.8.8, 8.8.4.4
                      - name: routers
                        data: 192.0.2.254
                    reservations:
