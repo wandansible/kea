@@ -147,6 +147,7 @@ Example Playbook
                        data: 8.8.8.8, 8.8.4.4
                      - name: routers
                        data: 192.0.2.254
+                   match-client-id: false
                    reservations:
                      - hostname: static-host.example.org
                        hw-address: aa:bb:cc:dd:ee:ff
