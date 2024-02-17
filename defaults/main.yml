@@ -4,7 +4,6 @@ kea_apt_key_fingerprint: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
 kea_packages:
   - isc-kea-admin
   - isc-kea-hooks
-  - isc-kea-ctrl-agent
 
 # which Kea components to enable 
 kea_dhcp4_enabled: true
