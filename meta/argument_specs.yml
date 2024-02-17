@@ -8,7 +8,7 @@ argument_specs:
           Repository version to track,
           for available versions see: https://cloudsmith.io/~isc/repos/
         type: str
-        default: 2-3
+        default: 2-4
 
       kea_apt_key_fingerprint:
         description: Fingerprint for kea apt key
@@ -28,7 +28,7 @@ argument_specs:
           defaults to "isc-kea-dhcp4-server"
           if the kea version is less than 2.3
         type: str
-        default: isc-kea-dhcp4
+        default: isc-kea-dhcp4-server
 
       kea_dhcp6_package:
         description: |
@@ -36,7 +36,7 @@ argument_specs:
           defaults to "isc-kea-dhcp6-server"
           if the kea version is less than 2.3
         type: str
-        default: isc-kea-dhcp6
+        default: isc-kea-dhcp6-server
 
       kea_ddns_package:
         description: |

@@ -1,19 +1,13 @@
 ---
-kea_apt_repo_version: 2-3
-kea_apt_key_fingerprint: 95B6C7ABDAEE9F164891B962DA05D46B7BABA24A
+kea_apt_repo_version: 2-4
+kea_apt_key_fingerprint: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
 kea_packages:
   - isc-kea-admin
   - isc-kea-hooks
 
-kea_dhcp4_package: >-
-  {{ 'isc-kea-dhcp4' if kea_apt_repo_version is version('2-3', '>=')
-  else 'isc-kea-dhcp4-server' }}
-kea_dhcp6_package: >-
-  {{ 'isc-kea-dhcp6' if kea_apt_repo_version is version('2-3', '>=')
-  else 'isc-kea-dhcp6-server' }}
-kea_ddns_package: >-
-  {{ 'isc-kea-dhcp-ddns' if kea_apt_repo_version is version('2-3', '>=')
-  else 'isc-kea-dhcp-ddns-server' }}
+kea_dhcp4_package: isc-kea-dhcp4-server
+kea_dhcp6_package: isc-kea-dhcp6-server
+kea_ddns_package: isc-kea-dhcp-ddns
 kea_control_agent_package: isc-kea-ctrl-agent
 
 kea_dhcp4_config: {}
