@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  namespace: wandansible
+  namespace: jarppiko
   role_name: kea
-  author: WAND Network Research Group
+  author: Github.com/jarppiko, adopted from github.com/wandansible/kea
   description: Install and configure Kea DHCP
 
   license: Apache-2.0
@@ -14,9 +14,11 @@ galaxy_info:
       versions:
         - buster
         - bullseye
+        - bookworm
     - name: Ubuntu
       versions:
-        - focal
+        - jammy
+        - mantic
 
   galaxy_tags: []
 
