@@ -1,10 +1,18 @@
 ---
 - ansible.builtin.import_tasks: apt.yml
 - ansible.builtin.import_tasks: dhcp4.yml
-  when: kea_dhcp4_config != {}
+  when: 
+    - kea_dhcp4_enabled
+    - kea_dhcp4_config != {}
 - ansible.builtin.import_tasks: dhcp6.yml
-  when: kea_dhcp6_config != {}
+  when: 
+    - kea_dhcp6_enabled
+    - kea_dhcp6_config != {}
 - ansible.builtin.import_tasks: ddns.yml
-  when: kea_ddns_config != {}
+  when: 
+    - kea_ddns_enabled    
+    - kea_ddns_config != {}
 - ansible.builtin.import_tasks: ctrl-agent.yml
-  when: kea_control_agent_config != {}
+  when: 
+    - kea_control_agent_enabled
+    - kea_control_agent_config != {}
