@@ -1,0 +1,7 @@
+# editors
+*.code-workspace
+*.swp
+*~
+
+# secrets
+*.key
