@@ -92,12 +92,12 @@ Installation
 
 This role can either be installed manually with the ansible-galaxy CLI tool:
 
-    ansible-galaxy install git+https://github.com/wandansible/kea,main,wandansible.kea
+    ansible-galaxy install git+https://github.com/jarppiko/ansible-kea,main
      
 Or, by adding the following to `requirements.yml`:
 
-    - name: wandansible.kea
-      src: https://github.com/wandansible/kea
+    - name: jarppiko.kea
+      src: https://github.com/jarppiko/ansible-kea
 
 Roles listed in `requirements.yml` can be installed with the following ansible-galaxy command:
 
@@ -108,7 +108,7 @@ Example Playbook
 
     - hosts: dhcp_servers
       roles:
-         - role: wandansible.kea
+         - role: jarppiko.kea
            become: true
            vars:
              kea_dhcp4_config:
