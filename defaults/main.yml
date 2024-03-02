@@ -5,11 +5,11 @@ kea_packages:
   - isc-kea-admin
   - isc-kea-hooks
 
-# which Kea components to enable 
+# which Kea components to enable
 kea_dhcp4_enabled: true
 kea_dhcp6_enabled: false
 kea_ddns_enabled: false
-kea_control_agent_enabled: true
+kea_control_agent_enabled: false
 
 kea_dhcp4_package: >-
   {{ 'isc-kea-dhcp4' if ansible_facts[‘distribution’] is 'Alpine'
@@ -21,7 +21,6 @@ kea_ddns_package: >-
   {{ 'isc-kea-dhcp-ddns' if ansible_facts[‘distribution’] is 'Alpine'
   else 'isc-kea-dhcp-ddns-server' }}
 kea_control_agent_package: isc-kea-ctrl-agent
-
 kea_dhcp4_config: {}
 kea_dhcp6_config: {}
 kea_ddns_config: {}
