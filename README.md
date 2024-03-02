@@ -92,12 +92,12 @@ Installation
 
 This role can either be installed manually with the ansible-galaxy CLI tool:
 
-    ansible-galaxy install git+https://github.com/jarppiko/ansible-kea,main
+    ansible-galaxy install git+https://github.com/jarppiko/ansible-role-kea,main
      
 Or, by adding the following to `requirements.yml`:
 
     - name: jarppiko.kea
-      src: https://github.com/jarppiko/ansible-kea
+      src: https://github.com/jarppiko/ansible-role-kea
 
 Roles listed in `requirements.yml` can be installed with the following ansible-galaxy command:
 
