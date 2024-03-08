@@ -12,13 +12,13 @@ kea_ddns_enabled: false
 kea_control_agent_enabled: false
 
 kea_dhcp4_package: >-
-  {{ 'isc-kea-dhcp4' if ansible_facts[‘distribution’] is 'Alpine'
+  {{ 'isc-kea-dhcp4' if ansible_facts['distribution'] is 'Alpine'
   else 'isc-kea-dhcp4-server' }}
 kea_dhcp6_package: >-
-  {{ 'isc-kea-dhcp6' if ansible_facts[‘distribution’] is 'Alpine'
+  {{ 'isc-kea-dhcp6' if ansible_facts['distribution'] is 'Alpine'
   else 'isc-kea-dhcp6-server' }}
 kea_ddns_package: >-
-  {{ 'isc-kea-dhcp-ddns' if ansible_facts[‘distribution’] is 'Alpine'
+  {{ 'isc-kea-dhcp-ddns' if ansible_facts['distribution'] is 'Alpine'
   else 'isc-kea-dhcp-ddns-server' }}
 kea_control_agent_package: isc-kea-ctrl-agent
 kea_dhcp4_config: {}
