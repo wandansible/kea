@@ -92,12 +92,12 @@ Installation
 
 This role can either be installed manually with the ansible-galaxy CLI tool:
 
-    ansible-galaxy install git+https://github.com/wandansible/ansible-role-kea,main
+    ansible-galaxy install git+https://github.com/wandansible/kea,main,wandansible.kea
      
 Or, by adding the following to `requirements.yml`:
 
     - name: wandansible.kea
-      src: https://github.com/wandansible/ansible-role-kea
+      src: https://github.com/wandansible/kea
 
 Roles listed in `requirements.yml` can be installed with the following ansible-galaxy command:
 
