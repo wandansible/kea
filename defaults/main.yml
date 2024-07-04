@@ -18,7 +18,7 @@ kea_dhcp6_package: >-
   {{ 'isc-kea-dhcp6' if ansible_facts['distribution'] == 'Alpine'
   else 'isc-kea-dhcp6-server' }}
 kea_ddns_package: >-
-  {{ 'isc-kea-dhcp-ddns' if ansible_facts['distribution'] == 'Alpine'
+  {{ 'isc-kea-dhcp-ddns' if kea_apt_repo_version is version('2-3', '>=')
   else 'isc-kea-dhcp-ddns-server' }}
 kea_control_agent_package: isc-kea-ctrl-agent
 kea_dhcp4_config: {}
