@@ -17,8 +17,10 @@ galaxy_info:
         - bookworm
     - name: Ubuntu
       versions:
+        - focal
         - jammy
         - mantic
+        - noble
 
   galaxy_tags: []
 
