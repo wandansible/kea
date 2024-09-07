@@ -13,76 +13,76 @@ OPTIONS (= is mandatory):
 
 - kea_apt_key_fingerprint
         Fingerprint for kea apt key
-        [Default: (null)]
+        default: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
         type: str
 
 - kea_apt_repo_version
         Repository version to track, for available versions see:
         https://cloudsmith.io/~isc/repos/
-        [Default: 2-3]
+        default: 2-4
         type: str
 
 - kea_control_agent_config
         Control agent configuration, see
         https://kea.readthedocs.io/en/latest/arm/agent.html. You do
         not need to include the top-level "Control-agent" key. If
-        configuration is provided then the control agent will be
+        configuration is left unset, the control agent will not be
         installed.
-        [Default: (null)]
+        default: {}
         type: dict
 
 - kea_control_agent_package
         Name of the control agent package
-        [Default: isc-kea-ctrl-agent]
+        default: isc-kea-ctrl-agent
         type: str
 
 - kea_ddns_config
         DHCP-DDNS server configuration, see
         https://kea.readthedocs.io/en/latest/arm/ddns.html. You do not
         need to include the top-level "DhcpDdns" key. If configuration
-        is provided then the DHCP-DDNS server will be installed.
-        [Default: (null)]
+        is left unset, the DHCP-DDNS server will not be installed.
+        default: {}
         type: dict
 
 - kea_ddns_package
         Name of the DHCP-DDNS server package, defaults to "isc-kea-
         dhcp-ddns-server" if the kea version is less than 2.3
-        [Default: isc-kea-dhcp-ddns]
+        default: isc-kea-dhcp-ddns
         type: str
 
 - kea_dhcp4_config
         DHCPv4 server configuration, see
         https://kea.readthedocs.io/en/latest/arm/dhcp4-srv.html. You
         do not need to include the top-level "Dhcp4" key. If
-        configuration is provided then the DHCPv4 server will be
+        configuration is left unset, the DHCPv4 server will not be
         installed.
-        [Default: (null)]
+        default: {}
         type: dict
 
 - kea_dhcp4_package
         Name of the DHCPv4 server package, defaults to "isc-kea-
         dhcp4-server" if the kea version is less than 2.3
-        [Default: isc-kea-dhcp4]
+        default: isc-kea-dhcp4-server
         type: str
 
 - kea_dhcp6_config
         DHCPv6 server configuration, see
         https://kea.readthedocs.io/en/latest/arm/dhcp6-srv.html. You
         do not need to include the top-level "Dhcp6" key. If
-        configuration is provided then the DHCPv6 server will be
+        configuration is left unset, the DHCPv6 server will not be
         installed.
-        [Default: (null)]
+        default: {}
         type: dict
 
 - kea_dhcp6_package
         Name of the DHCPv6 server package, defaults to "isc-kea-
         dhcp6-server" if the kea version is less than 2.3
-        [Default: isc-kea-dhcp6]
+        default: isc-kea-dhcp6-server
         type: str
 
 - kea_packages
         List of extra packages to install
-        [Default: ['isc-kea-admin', 'isc-kea-hooks']]
+        default: [isc-kea-admin, isc-kea-hooks]
         elements: str
         type: list
 ```

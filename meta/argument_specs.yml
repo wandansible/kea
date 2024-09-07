@@ -13,6 +13,7 @@ argument_specs:
       kea_apt_key_fingerprint:
         description: Fingerprint for kea apt key
         type: str
+        default: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
 
       kea_packages:
         description: List of extra packages to install
@@ -56,29 +57,33 @@ argument_specs:
           DHCPv4 server configuration,
           see https://kea.readthedocs.io/en/latest/arm/dhcp4-srv.html.
           You do not need to include the top-level "Dhcp4" key.
-          If configuration is provided then the DHCPv4 server will be installed.
+          If configuration is left unset, the DHCPv4 server will not be installed.
         type: dict
+        default: {}
 
       kea_dhcp6_config:
         description: |
           DHCPv6 server configuration,
           see https://kea.readthedocs.io/en/latest/arm/dhcp6-srv.html.
           You do not need to include the top-level "Dhcp6" key.
-          If configuration is provided then the DHCPv6 server will be installed.
+          If configuration is left unset, the DHCPv6 server will not be installed.
         type: dict
+        default: {}
 
       kea_ddns_config:
         description: |
           DHCP-DDNS server configuration,
           see https://kea.readthedocs.io/en/latest/arm/ddns.html.
           You do not need to include the top-level "DhcpDdns" key.
-          If configuration is provided then the DHCP-DDNS server will be installed.
+          If configuration is left unset, the DHCP-DDNS server will not be installed.
         type: dict
+        default: {}
 
       kea_control_agent_config:
         description: |
           Control agent configuration,
           see https://kea.readthedocs.io/en/latest/arm/agent.html.
           You do not need to include the top-level "Control-agent" key.
-          If configuration is provided then the control agent will be installed.
+          If configuration is left unset, the control agent will not be installed.
         type: dict
+        default: {}
