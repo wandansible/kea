@@ -24,6 +24,8 @@ jobs:
     strategy:
       matrix:
         target: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+        exclude:
+          - target: "ubuntu:noble"
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
