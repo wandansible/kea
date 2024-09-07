@@ -14,9 +14,11 @@ galaxy_info:
       versions:
         - buster
         - bullseye
+        - bookworm
     - name: Ubuntu
       versions:
         - focal
+        - jammy
 
   galaxy_tags: []
 
