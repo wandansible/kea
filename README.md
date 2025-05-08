@@ -20,7 +20,7 @@ Options (= indicates it is required):
                          trusted.gpg keyring or in the keyrings in the
                          trusted.gpg.d/ directory, or an ASCII armored
                          GPG public key block
-          default: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.0D9D9A1439E23DB9.key
+          default: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.63D408891D8B8D01.key
           type: str
 
 - kea_apt_repo_suite  Suite to use for the apt repository
@@ -34,7 +34,7 @@ Options (= indicates it is required):
 
 - kea_apt_repo_version  Repository version to track, for available versions see:
                          https://cloudsmith.io/~isc/repos/
-          default: 2-4
+          default: 2-6
           type: str
 
 - kea_control_agent_config  Control agent configuration, see

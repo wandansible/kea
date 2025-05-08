@@ -25,7 +25,8 @@ jobs:
       matrix:
         target: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
         exclude:
-          - target: "ubuntu:noble"
+          - target: "ubuntu:oracular"
+          - target: "ubuntu:plucky"
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

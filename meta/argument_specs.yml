@@ -8,7 +8,7 @@ argument_specs:
           Repository version to track,
           for available versions see: https://cloudsmith.io/~isc/repos/
         type: str
-        default: 2-4
+        default: 2-6
 
       kea_apt_repo_url:
         description: Base URL for the apt repository
@@ -34,7 +34,7 @@ argument_specs:
           or an ASCII armored GPG public key block
         type: str
         default: |-
-          https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.0D9D9A1439E23DB9.key
+          https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.63D408891D8B8D01.key
 
       kea_packages:
         description: List of extra packages to install
