@@ -11,8 +11,25 @@ ENTRY POINT: *main* - Install and configure Kea DHCP server
 
 Options (= indicates it is required):
 
-- kea_apt_key_fingerprint  Fingerprint for kea apt key
-          default: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
+- kea_apt_repo_component  Component to use for the apt repository
+          default: main
+          type: str
+
+- kea_apt_repo_gpg_key  Either a URL to a GPG key, absolute path to a keyring file, one or
+                         more fingerprints of keys either in the
+                         trusted.gpg keyring or in the keyrings in the
+                         trusted.gpg.d/ directory, or an ASCII armored
+                         GPG public key block
+          default: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.0D9D9A1439E23DB9.key
+          type: str
+
+- kea_apt_repo_suite  Suite to use for the apt repository
+          default: '{{ ansible_distribution_release }}'
+          type: str
+
+- kea_apt_repo_url  Base URL for the apt repository
+          default: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{
+            ansible_distribution | lower }}
           type: str
 
 - kea_apt_repo_version  Repository version to track, for available versions see:

@@ -10,10 +10,31 @@ argument_specs:
         type: str
         default: 2-4
 
-      kea_apt_key_fingerprint:
-        description: Fingerprint for kea apt key
+      kea_apt_repo_url:
+        description: Base URL for the apt repository
         type: str
-        default: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
+        default: |-
+          https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_distribution | lower }}
+
+      kea_apt_repo_suite:
+        description: Suite to use for the apt repository
+        type: str
+        default: "{{ ansible_distribution_release }}"
+
+      kea_apt_repo_component:
+        description: Component to use for the apt repository
+        type: str
+        default: "main"
+
+      kea_apt_repo_gpg_key:
+        description: |
+          Either a URL to a GPG key, absolute path to a keyring file,
+          one or more fingerprints of keys either in the trusted.gpg
+          keyring or in the keyrings in the trusted.gpg.d/ directory,
+          or an ASCII armored GPG public key block
+        type: str
+        default: |-
+          https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.0D9D9A1439E23DB9.key
 
       kea_packages:
         description: List of extra packages to install

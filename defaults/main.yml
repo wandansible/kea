@@ -1,6 +1,12 @@
 ---
 kea_apt_repo_version: 2-4
-kea_apt_key_fingerprint: 4AD10B6C98E09742E530EC4F0D9D9A1439E23DB9
+kea_apt_repo_url: |
+  https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_distribution | lower }}
+kea_apt_repo_suite: "{{ ansible_distribution_release }}"
+kea_apt_repo_component: "main"
+kea_apt_repo_gpg_key: |
+  https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.0D9D9A1439E23DB9.key
+
 kea_packages:
   - isc-kea-admin
   - isc-kea-hooks
