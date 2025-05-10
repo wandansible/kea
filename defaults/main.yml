@@ -5,7 +5,7 @@ kea_apt_repo_url: |
 kea_apt_repo_suite: "{{ ansible_distribution_release }}"
 kea_apt_repo_component: "main"
 kea_apt_repo_gpg_key: |
-  https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.63D408891D8B8D01.key
+  https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.key
 
 kea_packages:
   - isc-kea-admin
