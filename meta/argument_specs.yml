@@ -45,26 +45,17 @@ argument_specs:
           - isc-kea-hooks
 
       kea_dhcp4_package:
-        description: |
-          Name of the DHCPv4 server package,
-          defaults to "isc-kea-dhcp4-server"
-          if the kea version is less than 2.3
+        description: Name of the DHCPv4 server package
         type: str
         default: isc-kea-dhcp4-server
 
       kea_dhcp6_package:
-        description: |
-          Name of the DHCPv6 server package,
-          defaults to "isc-kea-dhcp6-server"
-          if the kea version is less than 2.3
+        description: Name of the DHCPv6 server package
         type: str
         default: isc-kea-dhcp6-server
 
       kea_ddns_package:
-        description: |
-          Name of the DHCP-DDNS server package,
-          defaults to "isc-kea-dhcp-ddns-server"
-          if the kea version is less than 2.3
+        description: Name of the DHCP-DDNS server package
         type: str
         default: isc-kea-dhcp-ddns
 
