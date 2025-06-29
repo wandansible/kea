@@ -32,9 +32,10 @@ Options (= indicates it is required):
             ansible_distribution | lower }}
           type: str
 
-- kea_apt_repo_version  Repository version to track, for available versions see:
+- kea_apt_repo_version  Repository version to track, for available
+                         versions see:
                          https://cloudsmith.io/~isc/repos/
-          default: 2-6
+          default: 3-0
           type: str
 
 - kea_control_agent_config  Control agent configuration, see
