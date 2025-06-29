@@ -15,11 +15,11 @@ Options (= indicates it is required):
           default: main
           type: str
 
-- kea_apt_repo_gpg_key  Either a URL to a GPG key, absolute path to a keyring file, one or
-                         more fingerprints of keys either in the
-                         trusted.gpg keyring or in the keyrings in the
-                         trusted.gpg.d/ directory, or an ASCII armored
-                         GPG public key block
+- kea_apt_repo_gpg_key  Either a URL to a GPG key, absolute path to a
+                         keyring file, one or more fingerprints of
+                         keys either in the trusted.gpg keyring or in
+                         the keyrings in the trusted.gpg.d/ directory,
+                         or an ASCII armored GPG public key block
           default: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.key
           type: str
 
@@ -32,9 +32,10 @@ Options (= indicates it is required):
             ansible_distribution | lower }}
           type: str
 
-- kea_apt_repo_version  Repository version to track, for available versions see:
+- kea_apt_repo_version  Repository version to track, for available
+                         versions see:
                          https://cloudsmith.io/~isc/repos/
-          default: 2-6
+          default: 3-0
           type: str
 
 - kea_control_agent_config  Control agent configuration, see
@@ -58,9 +59,7 @@ Options (= indicates it is required):
           default: {}
           type: dict
 
-- kea_ddns_package  Name of the DHCP-DDNS server package, defaults to
-                     "isc-kea-dhcp-ddns-server" if the kea version is
-                     less than 2.3
+- kea_ddns_package  Name of the DHCP-DDNS server package
           default: isc-kea-dhcp-ddns
           type: str
 
@@ -72,9 +71,7 @@ Options (= indicates it is required):
           default: {}
           type: dict
 
-- kea_dhcp4_package  Name of the DHCPv4 server package, defaults to
-                      "isc-kea-dhcp4-server" if the kea version is
-                      less than 2.3
+- kea_dhcp4_package  Name of the DHCPv4 server package
           default: isc-kea-dhcp4-server
           type: str
 
@@ -86,9 +83,7 @@ Options (= indicates it is required):
           default: {}
           type: dict
 
-- kea_dhcp6_package  Name of the DHCPv6 server package, defaults to
-                      "isc-kea-dhcp6-server" if the kea version is
-                      less than 2.3
+- kea_dhcp6_package  Name of the DHCPv6 server package
           default: isc-kea-dhcp6-server
           type: str
 

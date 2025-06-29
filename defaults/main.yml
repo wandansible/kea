@@ -1,5 +1,5 @@
 ---
-kea_apt_repo_version: 2-6
+kea_apt_repo_version: 3-0
 kea_apt_repo_url: |
   https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_distribution | lower }}
 kea_apt_repo_suite: "{{ ansible_distribution_release }}"
