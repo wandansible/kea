@@ -1,8 +1,8 @@
 ---
 kea_apt_repo_version: 3-0
 kea_apt_repo_url: |
-  https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_distribution | lower }}
-kea_apt_repo_suite: "{{ ansible_distribution_release }}"
+  https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_facts.distribution | lower }}
+kea_apt_repo_suite: "{{ ansible_facts.distribution_release }}"
 kea_apt_repo_component: "main"
 kea_apt_repo_gpg_key: |
   https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/gpg.key

@@ -24,12 +24,12 @@ Options (= indicates it is required):
           type: str
 
 - kea_apt_repo_suite  Suite to use for the apt repository
-          default: '{{ ansible_distribution_release }}'
+          default: '{{ ansible_facts.distribution_release }}'
           type: str
 
 - kea_apt_repo_url  Base URL for the apt repository
           default: https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{
-            ansible_distribution | lower }}
+            ansible_facts.distribution | lower }}
           type: str
 
 - kea_apt_repo_version  Repository version to track, for available

@@ -14,12 +14,12 @@ argument_specs:
         description: Base URL for the apt repository
         type: str
         default: |-
-          https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_distribution | lower }}
+          https://dl.cloudsmith.io/public/isc/kea-{{ kea_apt_repo_version }}/deb/{{ ansible_facts.distribution | lower }}
 
       kea_apt_repo_suite:
         description: Suite to use for the apt repository
         type: str
-        default: "{{ ansible_distribution_release }}"
+        default: "{{ ansible_facts.distribution_release }}"
 
       kea_apt_repo_component:
         description: Component to use for the apt repository
